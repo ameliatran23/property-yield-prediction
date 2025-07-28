@@ -64,8 +64,8 @@ simulated_one_prop_rent <- simulated_one_prop_rent |>
 
 summary(simulated_one_prop_rent)
 ```
-```{r}
 ## Result
+```{r}
 cat(sprintf("As shown in the result, we can see that the possible minimum rental yield rate is %.2f%%, the median is %.2f%%, mean is %.2f%%, and  the maximum is %.2f%%. However, it is generally reccomended to expect the real-life rental yield to be below the 3rd quartile, %.2f%%.", 
             min(simulated_one_prop_rent$rental_yield_one),
             median(simulated_one_prop_rent$rental_yield_one),
