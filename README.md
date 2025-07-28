@@ -1,6 +1,5 @@
 # Nobu Rental Yield Analysis
 Statistical analysis to estimate rental yield for Nobu Da Nang, a newly developed property with limited or undisclosed data. Using available minimum and maximum values, 1,000 simulated samples were generated to model potential pricing behaviors.
-Limitations: this is just a hypothetical analysis based on the available, yet limited, numbers. Will be subjected to change in the future.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, message = F)
@@ -30,8 +29,9 @@ simulated_prop_rent <- simulated_prop_rent |>
   arrange(rental_yield_studio)
 
 summary(simulated_prop_rent)
-
-#Print
+```
+## Result
+```{r}
 cat(sprintf("As shown in the result, we can see that the possible minimum rental yield rate is %.2f%%, the median is %.2f%%, mean is %.2f%%, and  the maximum is %.2f%%. However, it is generally reccomended to expect the real-life rental yield to be below the 3rd quartile, %.2f%%.", 
             min(simulated_prop_rent$rental_yield_studio),
             median(simulated_prop_rent$rental_yield_studio),
@@ -63,8 +63,9 @@ simulated_one_prop_rent <- simulated_one_prop_rent |>
   arrange(rental_yield_one)
 
 summary(simulated_one_prop_rent)
-
-#Print
+```
+```{r}
+## Result
 cat(sprintf("As shown in the result, we can see that the possible minimum rental yield rate is %.2f%%, the median is %.2f%%, mean is %.2f%%, and  the maximum is %.2f%%. However, it is generally reccomended to expect the real-life rental yield to be below the 3rd quartile, %.2f%%.", 
             min(simulated_one_prop_rent$rental_yield_one),
             median(simulated_one_prop_rent$rental_yield_one),
@@ -96,6 +97,9 @@ simulated_two_prop_rent <- simulated_two_prop_rent |>
   arrange(rental_yield_two)
 
 summary(simulated_two_prop_rent)
+```
+## Result
+```{r}
 cat(sprintf("As shown in the result, we can see that the possible minimum rental yield rate is %.2f%%, the median is %.2f%%, mean is %.2f%%, and  the maximum is %.2f%%. However, it is generally reccomended to expect the real-life rental yield to be below the 3rd quartile, %.2f%%.", 
             min(simulated_two_prop_rent$rental_yield_two),
             median(simulated_two_prop_rent$rental_yield_two),
@@ -103,3 +107,4 @@ cat(sprintf("As shown in the result, we can see that the possible minimum rental
             max(simulated_two_prop_rent$rental_yield_two),
             quantile(simulated_two_prop_rent$rental_yield_two, 0.75)))
 ```
+Limitations: this is just a hypothetical analysis based on the available, yet limited, numbers. Will be subjected to change in the future.
